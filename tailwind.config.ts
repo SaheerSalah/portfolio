@@ -8,10 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      screens: {
       },
+      colors: {},
+      container: {
+        center:true,
+        padding:{
+          DEFAULT: "1rem",
+          sm:"2rem",
+          lg:"4rem",
+          xl:"5rem",
+          "2xl":"6rem",
+        }
+      },
+
     },
   },
   plugins: [],

@@ -1,26 +1,20 @@
 "use client";
 import React from "react";
 
-
 const NavLink = [
   {
     id: 1,
-    title: "About",
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "Services",
+    title: "home",
     link: "#",
   },
   {
     id: 3,
-    title: "Project",
+    title: "project",
     link: "#",
   },
   {
     id: 4,
-    title: "Contact",
+    title: "contact",
     link: "#",
   },
   {
@@ -32,16 +26,21 @@ const NavLink = [
 const Navbar = () => {
   return (
     <>
-        <ul className="hidden lg:flex">
+      <div className="container pt-16">
+        <ul className="hidden md:block text-center">
           {NavLink.map((link) => {
             return (
-              <a key={link.id} href={link.link} className="mx-4 text-base font-sans font-semibold">
+              <a
+                key={link.id}
+                href={link.link}
+                className="mx-7 text-base font-sans "
+              >
                 {link.title}
               </a>
             );
           })}
         </ul>
-
+      </div>
     </>
   );
 };
