@@ -1,13 +1,10 @@
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 
-export default function Home() {
+export default function About() {
   return (
     <div className="overflow-x-hidden font-[family-name:var(--font-geist-sans)]">
       <Navbar />
-      <Hero />
-      <Footer />
+      About
     </div>
   );
 }

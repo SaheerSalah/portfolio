@@ -1,42 +1,49 @@
 "use client";
 import React from "react";
+import { FaMoon } from "react-icons/fa";
+import { CgGirl } from "react-icons/cg";
+import Link from "next/link";
+
 
 const NavLink = [
   {
     id: 1,
-    title: "home",
-    link: "#",
+    title: <CgGirl />,    
+    link: "/",    
   },
   {
     id: 3,
-    title: "project",
-    link: "#",
+    title: "portfolio",
+    link: "/portfolio",
   },
   {
     id: 4,
-    title: "contact",
-    link: "#",
+    title: "about",
+    link: "/about",
+    
   },
   {
     id: 5,
-    title: "mode",
+    title: <FaMoon />,
     link: "#",
   },
 ];
+
+
 const Navbar = () => {
   return (
     <>
-      <div className="container pt-16">
-        <ul className="hidden md:block text-center">
+      <div className="container py-6 bg-white-100">
+        <ul className="text-center hidden md:flex justify-center items-center">
           {NavLink.map((link) => {
             return (
-              <a
+              <Link
                 key={link.id}
                 href={link.link}
-                className="mx-7 text-base font-sans "
+                 className="mx-11 text-base font-sans "
               >
                 {link.title}
-              </a>
+              </Link>
             );
           })}
         </ul>
@@ -44,4 +51,5 @@ const Navbar = () => {
     </>
   );
 };
+
 export default Navbar;
