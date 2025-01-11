@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import sos from "../../../public/assets/images/soso.png";
 
 const Projects = [
   {
@@ -34,7 +35,15 @@ const ProjectCard = () => {
           >
             {project.id % 2 === 0 ? (
               <>
-                <div className=" border-4 border-blue-100 flex justify-self-center justify-center items-center  bg-gradient-to-r from-blue-500 to-purple-500  h-80 w-96"></div>
+                <div className="  flex justify-self-center justify-center items-center   h-80 w-96">
+                  <Image
+                    className=""
+                    src={sos}
+                    alt="personalImage"
+                    width={500}
+                    height={500}
+                  />
+                </div>
                 <div>
                   <h2 className="mb-2 text-lg font-medium">{project.title}</h2>
                   <p>{project.description}</p>
@@ -46,7 +55,15 @@ const ProjectCard = () => {
                   <h2 className="mb-2 text-lg font-medium">{project.title}</h2>
                   <p>{project.description}</p>
                 </div>
-                <div className=" border-4 border-blue-100 flex justify-self-center justify-center items-center  bg-gradient-to-r from-blue-500 to-purple-500  h-80 w-96"></div>
+                <div className="  flex justify-self-center justify-center items-center    h-80 w-96">
+                <Image
+                    className=""
+                    src={sos}
+                    alt="personalImage"
+                    width={500}
+                    height={500}
+                  />
+                </div>
               </>
             )}
           </div>
