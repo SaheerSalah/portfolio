@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import sos from "../../../public/assets/images/soso.png";
 import Link from "next/link";
+import HoverImage from "../HoverImage";
 
 const Projects = [
   {
@@ -39,12 +40,10 @@ const Projects = [
 
 const ProjectCard = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  // const fff = (idd:number)=>{
-  //   iddd==
-  // }
+  
   return (
     <>
-      <div className="container py-6 bg-white-100">
+      <div className="container py-10  bg-white-100">
         {Projects.map((project, index) => (
           <div
             key={project.id}
@@ -52,32 +51,18 @@ const ProjectCard = () => {
           >
             {project.id % 2 === 0 ? (
               <>
-                <div
-                  className="relative  overflow-hidden flex justify-self-center justify-center items-center   h-80 w-96"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <Image
-                    className=""
-                    src={sos}
-                    alt="personalImage"
-                    width={500}
-                    height={500}
-                  />
-                  <div
-                    className={`absolute bottom-0 left-0 w-full bg-black bg-opacity-80 text-white p-4 transform transition-transform duration-300 ${
-                      hoveredIndex === index
-                        ? "translate-y-0"
-                        : "translate-y-full"
-                    }`}
-                  >
-                    <p className="text-sm">{project.sliderData}</p>
-                  </div>
-                </div>
-                <div>
+              <HoverImage
+                src={sos} 
+                index={index}
+                sliderData={project.sliderData}
+                hoveredIndex={hoveredIndex}
+                setHoveredIndex={setHoveredIndex}
+                className="order-1 md:order-none"
+              />          
+                <div className="order-2 md:order-none">
                   <h2 className="mb-2 text-lg font-medium">{project.title}</h2>
                   <p className="mb-4">{project.description}</p>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 justify-center md:justify-start">
                     <button className=" bg-purple-500 text-white border rounded-lg p-2">
                       <Link href={project.liveDemoLink || "#"}>Live Demo</Link>
                     </button>
@@ -89,10 +74,10 @@ const ProjectCard = () => {
               </>
             ) : (
               <>
-                <div>
+                <div className="order-2 md:order-none">
                   <h2 className="mb-2 text-lg font-medium">{project.title}</h2>
                   <p className="mb-4">{project.description}</p>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 justify-center md:justify-start">
                     <button className=" bg-purple-500 text-white border rounded-lg p-2">
                       <Link href={project.liveDemoLink || "#"}>Live Demo</Link>
                     </button>
@@ -101,26 +86,14 @@ const ProjectCard = () => {
                     </button>
                   </div>
                 </div>
-                <div
-                  className="relative  overflow-hidden flex justify-self-center justify-center items-center   h-80 w-96"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <Image
-                    className=""
-                    src={sos}
-                    alt="personalImage"
-                    width={500}
-                    height={500}
-                  />
-                  <div
-                    className={`absolute bottom-0 left-0 w-full bg-black bg-opacity-60 text-white p-4 transform transition-transform duration-1000 ${
-                      hoveredIndex === index? "translate-y-0" : "translate-y-full"
-                    }`}
-                  >
-                    <p className="text-sm">{project.sliderData}</p>
-                  </div>
-                </div>
+                <HoverImage
+                src={sos} 
+                index={index}
+                sliderData={project.sliderData}
+                hoveredIndex={hoveredIndex}
+                setHoveredIndex={setHoveredIndex}
+                className="order-1 md:order-none"
+              />
               </>
             )}
           </div>
