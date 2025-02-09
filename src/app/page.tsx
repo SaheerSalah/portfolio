@@ -4,10 +4,12 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="container overflow-x-hidden font-[family-name:var(--font-geist-sans)]">
-      <Navbar />
+    <div className="bg-gray-50 py-3">
+      <div className="container overflow-x-hidden font-[family-name:var(--font-geist-sans)]">
       <Hero />
-      <Footer />
     </div>
+
+    </div>
+    
   );
 }

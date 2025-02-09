@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="relative container py-6 bg-white-100">
+      <div className="relative  py-6  bg-gray-50 md:px-0 px-4">
         <div className="md:hidden flex justify-between">
           <div className="div">
             <button onClick={toggleMenu} className="text-xl">

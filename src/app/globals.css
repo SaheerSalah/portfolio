@@ -25,3 +25,42 @@ body {
     text-wrap: balance;
   }
 }
+
+
+
+
+@layer utilities {
+  /* حجم الـ Scrollbar */
+  
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* لون الخلفية */
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  /* لون المقبض */
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background:#c084fc;
+    border-radius: 10px;
+  }
+
+  /* لون المقبض عند التحويم */
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: #c084fc;
+  }
+  @supports not selector( ::-webkit-scrollbar){
+    .scrollbar-firefox {
+    scrollbar-width: thin; /* اجعل التمرير نحيف */
+    scrollbar-color: #c084fc #f1f1f1; /* لون المقبض والمسار */
+  }
+}
+  
+
+}
+
+
